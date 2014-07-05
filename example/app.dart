@@ -2,7 +2,7 @@ import 'dart:math';
 import 'dart:js';
 import 'dart:html';
 import 'dart:async';
-import 'lib/signal_dart.dart';
+import '../lib/signal_dart.dart';
 
 void main() {
   HubConnection hc = new HubConnection(url:'http://localhost:55780/signalr');
