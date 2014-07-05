@@ -8,3 +8,4 @@ packages
 *.js_
 *.js.deps
 *.js.map
+build
