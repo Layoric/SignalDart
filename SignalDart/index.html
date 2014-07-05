@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="http://localhost:55780/Scripts/jquery.signalR-2.1.0.js"></script>
+    <script src="http://localhost:55780/signalr/js"></script>
+    <script src="app.dart" type="application/dart"></script>
+    <script src="packages/browser/dart.js"></script>
+</head>
+<body>
+<h1>SignalR From Dart</h1>
+<div>
+    <label for="chatName">Name</label>
+    <input type="text" name="chatName" id="chatName" value="" />
+    <label for="chatInput">Message</label>
+    <input type="text" name="chatInput" id="chatInput" value="" />
+    <input type="button" name="sendMessage" id="sendMessage" value="Send" />
+    <div>
+        <ul id="messageList"></ul>
+    </div>
+</div>
+<script>
+    //Chrome passes the error object (5th param) which we must use since it now truncates the Msg (1st param).
+    window.onerror = function (errorMsg, url, lineNumber, columnNumber, errorObject) {
+        var errMsg;
+        //check the errorObject as IE and FF don't pass it through (yet)
+        if (errorObject && errorObject !== undefined) {
+            errMsg = errorObject.message;
+        }
+        else {
+            errMsg = errorMsg;
+        }
+        alert('Error: ' + errMsg);
+    }
+</script>
+</body>
+</html>

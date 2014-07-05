@@ -1,0 +1,8 @@
+name: SignalDart
+version: 0.0.1
+author: Darren Reid
+description: A package to help use SignalR JS client with Dart
+dependencies:
+  async: any
+  browser: any
+  json_client: any
