@@ -1,4 +1,4 @@
-part of signaldart;
+part of signal_dart;
 
 class HubProxy {
   invoke(String methodName, List<Object> parameters) {

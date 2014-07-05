@@ -1,4 +1,4 @@
-part of signaldart;
+part of signal_dart;
 
 class HubConnection {
   JsObject hubConnection;
