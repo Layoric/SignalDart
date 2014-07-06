@@ -19,9 +19,3 @@ proxy.on('broadcastMessage', (String name,String message) {
     document.querySelector('#messageList').appendHtml('<li>' + name + ' - ' + message + '</li>');
   });
 ```
-
-### Jquery version ###
-jQuery 2.x needs to be used.
-
-This id due to how Dart handles function calls in its js interop library and how jquery 1.6.4 wrote 'promises' using done() and querying the 'arguments' property within the JS function.
-
