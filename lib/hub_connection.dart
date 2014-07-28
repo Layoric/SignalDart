@@ -15,7 +15,7 @@ class HubConnection {
   }
 
   start(Function callback) {
-    JsObject startConnectionResult = hubConnection.callMethod('start',[{"jsonp",true}]);
+    JsObject startConnectionResult = hubConnection.callMethod('start',[{"jsonp":true}]);
     startConnectionResult.callMethod('done',[callback]);
   }
 }
