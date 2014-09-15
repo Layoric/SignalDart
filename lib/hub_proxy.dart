@@ -1,20 +1,31 @@
 part of signal_dart;
 
 class HubProxy {
-  invoke(String methodName, List<Object> parameters) {
-    List<Object> args = new List<Object>();
-    args.add(methodName);
-    args.addAll(parameters);
-    hubProxy.callMethod('invoke',args);
-  }
+	InvokeResult invoke(String methodName, List<Object> parameters) {
+    	List<Object> args = new List<Object>();
+    	args.add(methodName);
+    	args.addAll(parameters);
+    	return new InvokeResult(hubProxy.callMethod('invoke',args));
+  	}
 
-  HubConnection hubConnection;
-  JsObject hubProxy;
-  HubProxy(this.hubConnection,String hubName) {
-    hubProxy = hubConnection.hubConnection.callMethod('createHubProxy',[hubName]);
-  }
+ 	HubConnection hubConnection;
+	JsObject hubProxy;
 
-  on(String methodName,Function callback) {
-    hubProxy.callMethod('on',[methodName,callback]);
-  }
+	HubProxy(this.hubConnection,String hubName) {
+		hubProxy = hubConnection.hubConnection.callMethod('createHubProxy',[hubName]);
+	}
+
+	void on(String methodName,Function callback) {
+		hubProxy.callMethod('on',[methodName,callback]);
+	}
+}
+
+class InvokeResult{
+	JsObject invokeResult;
+
+	InvokeResult(this.invokeResult);
+
+	void done(void callback(dynamic Result)){
+		invokeResult.callMethod('done',[callback]);
+	}
 }
