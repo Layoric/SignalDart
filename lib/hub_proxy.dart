@@ -25,7 +25,7 @@ class InvokeResult{
 
 	InvokeResult(this.invokeResult);
 
-	void done(void callback(dynamic Result)){
+	void done(Function callback){
 		invokeResult.callMethod('done',[callback]);
 	}
 }
