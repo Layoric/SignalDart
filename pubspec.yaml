@@ -1,10 +1,8 @@
 name: signal_dart
-version: 0.0.2
+version: 0.0.3
 author: Darren Reid <layoric@gmail.com>
 description: A package to help use SignalR JS client with Dart
 homepage: https://github.com/Layoric/SignalDart
 documentation: https://github.com/Layoric/SignalDart
-dependencies:
-  async: '>=1.0.0 <2.0.0'
+dev_dependencies:
   browser: '>=0.10.0+2 <0.11.0'
-  json_client: '>=0.1.2 <0.2.0'
