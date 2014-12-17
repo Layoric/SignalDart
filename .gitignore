@@ -9,3 +9,4 @@ packages
 *.js.deps
 *.js.map
 build
+.settings/org.eclipse.core.resources.prefs
