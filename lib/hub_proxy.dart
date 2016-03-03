@@ -18,5 +18,13 @@ class HubProxy {
 	void on(String methodName, Function callback) {
 		hubProxy.callMethod('on', [methodName, callback]);
 	}
+
+	Stream onAsync( String methodName )	{
+		var streamController = new StreamController();
+
+		hubProxy.callMethod( 'on', [methodName,(_) => streamController.add(_)] );
+
+		return streamController.stream;
+	}
 }
 

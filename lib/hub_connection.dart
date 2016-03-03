@@ -12,8 +12,17 @@ class HubConnection {
 
 	createHubProxy(String hubName) => new HubProxy(this, hubName);
 
-	start(Function callback) {
+	void start(Function callback) {
 		JsObject startConnectionResult = hubConnection.callMethod('start');
 		startConnectionResult.callMethod('done', [callback]);
+	}
+
+	Future startAsync()	{
+		JsObject startConnectionResult = hubConnection.callMethod('start');
+		var completer = new Completer();
+
+		startConnectionResult.callMethod('done', [(_) => completer.complete(_)]);
+
+		return completer.future;
 	}
 }
