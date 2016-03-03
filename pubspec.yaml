@@ -1,5 +1,5 @@
 name: signal_dart
-version: 0.0.3
+version: 0.0.4
 author: Darren Reid <layoric@gmail.com>
 description: A package to help use SignalR JS client with Dart
 homepage: https://github.com/Layoric/SignalDart

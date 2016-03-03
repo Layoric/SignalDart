@@ -10,3 +10,5 @@ packages
 *.js.map
 build
 .settings/org.eclipse.core.resources.prefs
+.packages
+pubspec.lock
