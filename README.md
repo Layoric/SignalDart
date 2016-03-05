@@ -18,4 +18,5 @@ HubProxy proxy = hc.createHubProxy('testHub');
 proxy.on('broadcastMessage', (String name,String message) {
     document.querySelector('#messageList').appendHtml('<li>' + name + ' - ' + message + '</li>');
   });
+// Or proxy.onAsync...
 ```
